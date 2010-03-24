@@ -1,0 +1,64 @@
+Redmine Projects Approval
+==============
+
+This plugin adds a mandatory approval step after all projects creation. Admins will have to approve each and every single project before they can be seen by any user in the system.
+
+## Summary
+
+Two basic things are done in the plugin:
+
+- Approval behaviour is added to all projects. They all get a new state called "waiting_for_approval". This will be the current status after project creation by any user (except admins), and no user will be able to see the project unless and admin accepts it by clicking on the "unarchive" button.
+
+- Creation behaviour is modified on Projects Controller. User will be redirected to 'index' action upon creation and the flash notice message will be updated to reflect the need of approval.
+
+A notifier is included with the plugin, which will send a "waiting_for_approval" message to the first admin in the current Redmine installation whenever a new project is created. When the project has been accepted by the admin, the same notifier will send a "project_has_been_approved" message to the project's creator. Make sure you have properly configured ActionMailer in order for this to work.
+
+## Installation
+
+Download the sources and put them to your vendor/plugins folder.
+
+    $ cd {REDMINE_ROOT}
+    $ git clone git://github.com/davidfb/redmine_projects_approval.git vendor/plugins/redmine_projects_approval
+
+Start / Restart Redmine.
+
+That's all! :)
+
+## Available translations
+
+- en (English)
+- es (Spanish)
+- gl (Galician)
+
+## Testing
+
+No test file has been included in the plugin.
+
+Plugin has been successfully used in Redmine v0.8
+
+## Internals
+
+Important files:
+
+    /app
+      /models
+        /approval_notifier.rb   # Notifier
+      /views
+        /approval_notifier      # Notifier views
+          /project_has_been_approved.html.erb
+          /waiting_for_approval.html.erb
+    /config
+      /locales                  # Supported locales
+        /en.yml
+        /es.yml
+        /gl.yml
+    /lib
+      /active_record
+        /project_approval.rb    # Changes to the Project model.
+      /with_locale.rb           # Little helper to easily use different locales.
+
+Changes made to the Project model are:
+
+- A new status "waiting_for_approval" is added (internally it uses value number 2 in project's status column).
+- Before_create, after_create and after_save active record hooks are added.
+

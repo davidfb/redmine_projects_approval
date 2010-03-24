@@ -1,0 +1,19 @@
+<div>
+<%= I18n.t('projects_approval.notifier.waiting_for_approval.title') %>:
+</div>
+
+<ul>
+  <li><%= Project.human_attribute_name(:identifier) %>: <%= @project.identifier %></li>
+  <li><%= Project.human_attribute_name(:name) %>: <%= @project.name %></li>
+  <li><%= Project.human_attribute_name(:homepage) %>: <%= @project.homepage.blank? ? '-' : @project.homepage.blank %></li>
+  <li><%= Project.human_attribute_name(:is_public) %>: <%= @project.is_public ? I18n.t('projects_approval.notifier.waiting_for_approval.affirmative') : I18n.t('projects_approval.notifier.waiting_for_approval.negative') %></li>
+  <li><%= Project.human_attribute_name(:created_on) %>: <%= @project.created_on %></li>
+  <%- unless @project.description.blank? -%>
+  <li><%= Project.human_attribute_name(:description) %>: <%= @project.description %></li>
+  <%- end -%>
+</ul>
+
+<div>
+  <%= I18n.t('projects_approval.notifier.waiting_for_approval.text') %>
+  <%= link_to I18n.t('projects_approval.notifier.waiting_for_approval.link'), @link %>.
+</div>

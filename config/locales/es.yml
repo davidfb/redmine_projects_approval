@@ -1,0 +1,18 @@
+# English strings go here for Rails i18n
+es:
+  projects_approval:
+    creation_flash_message: >
+      Un administrador se pondrá en contacto con usted a través del correo electrónico lo antes posible para determinar si el proyecto
+      ha sido aprobado o no.
+    notifier:
+      waiting_for_approval:
+        title: Hay un nuevo proyecto en espera de aprobación
+        affirmative: Sí
+        negative: No
+        text: Para aprobarlo o cancelarlo, haga click
+        link: aquí
+      project_has_been_approved:
+        title: "El proyecto \"{{name}}\" ha sido aprobado."
+        text: Puede encontrarlo
+        link: aquí
+
