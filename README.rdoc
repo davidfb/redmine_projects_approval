@@ -1,9 +1,8 @@
-Redmine Projects Approval
-==============
+=Redmine Projects Approval
 
 This plugin adds a mandatory approval step after all projects creation. Admins will have to approve each and every single project before they can be seen by any user in the system.
 
-## Summary
+==Summary
 
 Two basic things are done in the plugin:
 
@@ -13,7 +12,7 @@ Two basic things are done in the plugin:
 
 A notifier is included with the plugin, which will send a "waiting_for_approval" message to the first admin in the current Redmine installation whenever a new project is created. When the project has been accepted by the admin, the same notifier will send a "project_has_been_approved" message to the project's creator. Make sure you have properly configured ActionMailer in order for this to work.
 
-## Installation
+==Installation
 
 Download the sources and put them to your vendor/plugins folder.
 
@@ -24,19 +23,19 @@ Start / Restart Redmine.
 
 That's all! :)
 
-## Available translations
+==Available translations
 
 - en (English)
 - es (Spanish)
 - gl (Galician)
 
-## Testing
+==Testing
 
 No test file has been included in the plugin.
 
 Plugin has been successfully used in Redmine v0.8
 
-## Internals
+==Internals
 
 Important files:
 
