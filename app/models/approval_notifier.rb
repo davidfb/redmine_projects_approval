@@ -2,6 +2,8 @@ class ApprovalNotifier < Mailer
 
   unloadable
 
+  template_root = File.join(File.dirname(__FILE__), '..', 'views')
+
   def waiting_for_approval(admin, project, asker)
     set_language_if_valid admin.language
     recipients   admin.mail

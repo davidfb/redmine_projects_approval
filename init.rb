@@ -9,11 +9,6 @@ Redmine::Plugin.register :redmine_projects_approval do
 end
 
 
-# The new ActionMailer view path is added to the list of paths.
-
-ActionMailer::Base.view_paths << File.join(File.dirname(__FILE__), 'app', 'views')
-
-
 # Approval behaviour is added to all projects.
 
 Project.class_eval { include ActiveRecord::ProjectApproval }

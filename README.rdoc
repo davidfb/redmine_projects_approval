@@ -69,4 +69,4 @@ This space is to thank all project contributors:
 - Anthony Paul.
     · French translation.
     · Added asker information to waiting_for_approval email.
-    · Tests on Redmine 0.9.3.
+    · Suggested multipart emails.
