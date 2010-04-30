@@ -3,6 +3,7 @@
 </div>
 
 <ul>
+  <li><%= I18n.t('projects_approval.notifier.waiting_for_approval.asker') %>: <%= @asker.name %> (<%= @asker.mail %>)</li>
   <li><%= Project.human_attribute_name(:identifier) %>: <%= @project.identifier %></li>
   <li><%= Project.human_attribute_name(:name) %>: <%= @project.name %></li>
   <li><%= Project.human_attribute_name(:homepage) %>: <%= @project.homepage.blank? ? '-' : @project.homepage.blank %></li>

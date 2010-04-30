@@ -1,0 +1,15 @@
+<%= I18n.t('projects_approval.notifier.waiting_for_approval.title') %>:
+
+ * <%= I18n.t('projects_approval.notifier.waiting_for_approval.asker') %>: <%= @asker.name %> (<%= @asker.mail %>)
+ * <%= Project.human_attribute_name(:identifier) %>: <%= @project.identifier %>
+ * <%= Project.human_attribute_name(:name) %>: <%= @project.name %>
+ * <%= Project.human_attribute_name(:homepage) %>: <%= @project.homepage.blank? ? '-' : @project.homepage.blank %>
+ * <%= Project.human_attribute_name(:is_public) %>: <%= @project.is_public ? I18n.t('projects_approval.notifier.waiting_for_approval.affirmative') : I18n.t('projects_approval.notifier.waiting_for_approval.negative') %>
+ * <%= Project.human_attribute_name(:created_on) %>: <%= @project.created_on %>
+<%- unless @project.description.blank? -%>
+ * <%= Project.human_attribute_name(:description) %>: <%= @project.description %>
+<%- end -%>
+
+
+<%= I18n.t('projects_approval.notifier.waiting_for_approval.text_for_plain') %> <%= @link %>.
+

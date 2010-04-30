@@ -10,6 +10,8 @@ gl:
         negative: Non
         text: Para aprobalo ou cancelalo, faga click 
         link: aquí
+        text_for_plain: Para aprobalo ou cancelalo, vaia a 
+        asker: Solicitado por
       project_has_been_approved:
         title: "O proxecto \"{{name}}\" foi aprobado."
         text: Pode atopalo

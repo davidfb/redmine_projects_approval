@@ -10,6 +10,8 @@ en:
         negative: No
         text: To approve it or cancel it, click
         link: here
+        text_for_plain: To approve it or cancel it, go to
+        asker: Requested by
       project_has_been_approved:
         title: "Your project \"{{name}}\" has been approved."
         text: You can find it
