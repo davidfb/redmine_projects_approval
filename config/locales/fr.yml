@@ -10,7 +10,7 @@ fr:
         negative: Non
         text: Pour le valider ou le refuser, cliquez
         link: ici
-        text_for_plain: Pour le valide ou le refuser, visitez
+        text_for_plain: Pour le valider ou le refuser, allez sur
         asker: Demandé par
       project_has_been_approved:
         title: "Votre projet \"{{name}}\" a été validé."
