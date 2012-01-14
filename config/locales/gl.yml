@@ -13,7 +13,7 @@ gl:
         text_for_plain: Para aprobalo ou cancelalo, vaia a 
         asker: Solicitado por
       project_has_been_approved:
-        title: "O proxecto \"{{name}}\" foi aprobado."
+        title: "O proxecto \"%{name}\" foi aprobado."
         text: Pode atopalo
         link: aquí
 

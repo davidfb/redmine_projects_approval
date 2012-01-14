@@ -13,6 +13,6 @@ fr:
         text_for_plain: Pour le valider ou le refuser, allez sur
         asker: Demandé par
       project_has_been_approved:
-        title: "Votre projet \"{{name}}\" a été validé."
+        title: "Votre projet \"%{name}\" a été validé."
         text: Vous pouvez le trouver
         link: ici
