@@ -12,9 +12,9 @@ module ActiveRecord
 
       base.after_create do |record|
         if record.status = base::STATUS_WAITING_FOR_APPROVAL
-          admin = User.find(:first, :conditions => { :admin => true })
+          admins = User.find(:all, :conditions => { :admin => true })
           asker = User.current
-          ApprovalNotifier.deliver_waiting_for_approval(admin, record, asker)
+          admins.each { |admin| ApprovalNotifier.deliver_waiting_for_approval(admin, record, asker) }
         end
       end
 

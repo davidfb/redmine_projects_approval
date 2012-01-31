@@ -14,7 +14,7 @@ es:
         text_for_plain: Para probarlo o cancelarlo, vaya a
         asker: Solicitado por
       project_has_been_approved:
-        title: "El proyecto \"{{name}}\" ha sido aprobado."
+        title: "El proyecto \"%{name}\" ha sido aprobado."
         text: Puede encontrarlo
         link: aquí
 
