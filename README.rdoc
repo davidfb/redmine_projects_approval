@@ -40,7 +40,7 @@ Plugin has been successfully used in Redmine v0.8
 
 Only functional and other important changes are shown below.
 
-v0.0.2 : Now all administrators are notified with an e-mail when a new project is created and is maiting for approval.
+- v0.0.2 : Now all administrators are notified with an e-mail when a new project is created and is maiting for approval.
 
 ==Internals
 
@@ -81,4 +81,5 @@ This space is to thank all project contributors:
 - Andriy Lesyuk.
     · Better handling of HTML/plain format.
     · Email all admins instead of the first one.
+    · Support for Redmine 1.x.x.
     · Other fixes.
