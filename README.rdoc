@@ -10,7 +10,7 @@ Two basic things are done in the plugin:
 
 - Creation behaviour is modified on Projects Controller. User will be redirected to 'index' action upon creation and the flash notice message will be updated to reflect the need of approval.
 
-A notifier is included with the plugin, which will send a "waiting_for_approval" message to the first admin in the current Redmine installation whenever a new project is created. When the project has been accepted by the admin, the same notifier will send a "project_has_been_approved" message to the project's creator. Make sure you have properly configured ActionMailer in order for this to work.
+A notifier is included with the plugin, which will send a "waiting_for_approval" message to all admins in the current Redmine installation whenever a new project is created. When the project has been accepted by the admin, the same notifier will send a "project_has_been_approved" message to the project's creator. Make sure you have properly configured ActionMailer in order for this to work.
 
 ==Installation
 
@@ -36,6 +36,12 @@ No test file has been included in the plugin.
 
 Plugin has been successfully used in Redmine v0.8
 
+==History
+
+Only functional and other important changes are shown below.
+
+v0.0.2 : Now all administrators are notified with an e-mail when a new project is created and is maiting for approval.
+
 ==Internals
 
 Important files:
@@ -51,6 +57,7 @@ Important files:
       /locales                  # Supported locales
         /en.yml
         /es.yml
+        /fr.yml
         /gl.yml
     /lib
       /active_record
@@ -70,3 +77,8 @@ This space is to thank all project contributors:
     · French translation.
     · Added asker information to waiting_for_approval email.
     · Suggested multipart emails.
+
+- Andriy Lesyuk.
+    · Better handling of HTML/plain format.
+    · Email all admins instead of the first one.
+    · Other fixes.
