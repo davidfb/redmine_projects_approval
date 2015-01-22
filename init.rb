@@ -18,13 +18,10 @@ Project.class_eval { include ActiveRecord::ProjectApproval }
 # notice message will be updated to reflect the need of approval.
 
 ProjectsController.class_eval do
-
-  after_filter(:only => [ :add, :create ]) do |c|
-    project = c.instance_variable_get('@project')
-    if c.request.post? and project and project.errors.empty? and project.status == Project::STATUS_WAITING_FOR_APPROVAL
-      c.send(:flash)[:notice] += " #{I18n.t('projects_approval.creation_flash_message')}"
-      c.instance_variable_set('@performed_redirect', false)
-      c.send(:redirect_to, {:action => :index})
+  after_filter(:only => [ :add, :create ]) do |controller|
+    project = controller.instance_variable_get('@project')
+    if controller.request.post? and project and project.errors.empty? and project.status == Project::STATUS_WAITING_FOR_APPROVAL
+      flash[:notice] = " #{I18n.t('projects_approval.creation_flash_message')}"
     end
   end
 
